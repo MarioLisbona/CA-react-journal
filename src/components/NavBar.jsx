@@ -28,11 +28,11 @@ const NavBar = () => {
             Select Category
         </Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link text-light" to="/entry/new">
-            New Entry
+        {/* <li className="nav-item">
+          <Link className="nav-link text-light" to="/entry/0">
+            Show entry 0
             </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   </div>

@@ -1,14 +1,11 @@
 // Importing all the necessary modules
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 // creating the React Arrow Function Component with Export for CategorySelection
 
-const CategorySelection = () => {
-  // creating variables to track the state of each category for New posts.
-  // Imitial state for categories is 'Food', 'Coding', 'Work', 'Other'
-    const [categories, setCategories] = useState(['Food', 'Coding', 'Work', 'Other'])
-    
+const CategorySelection = ({ categories }) => {
+
   // returning React components
   return (
     // fragment to all nested components to be returned
@@ -23,7 +20,7 @@ const CategorySelection = () => {
 
           {categories.map((cat, index) => (
               <li key={index}>
-                  <Link to={`/entry/new/${cat}`}>{cat}</Link>
+                  <Link to={`/entry/new/${cat.name}`}>{cat.name}</Link>
               </li>
           ))}
       </ul>

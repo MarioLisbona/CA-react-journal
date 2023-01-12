@@ -1,29 +1,25 @@
 // Importing all the necessary modules
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 // creating the React Arrow Function Component with Export for NewEntry component
 // component accepts entries and setEntries as props - destructured
-const NewEntry = ({ setEntries, entries }) => {
+const NewEntry = ({ addEntry }) => {
     
     // creating variable to  contain the value of the URI arguments passed to the url
-    const { category} = useParams()
+    const { category } = useParams()
 
     // variables to track the state of the data in the journal entry text box
     const [entry, setEntry] = useState('')
 
+
     // function to be used for onSubmit for form
     // form being reloaded on submit prevented
     // create a new object with values for category and content keys and assign to newEntry
-    // Call setEntries with the exisiting array of entries newEntry as arguments
+    // Call setEntries with the existing array of entries newEntry as arguments
     function submit(event) {
         event.preventDefault()
-        const newEntry =  {
-            category: category,
-            content: entry
-        }
-
-        setEntries([...entries, newEntry])
+        addEntry(category, entry)
     }
 
 
