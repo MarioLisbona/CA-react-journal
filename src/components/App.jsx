@@ -8,7 +8,7 @@ import NavBar from './NavBar'
 import { useState } from 'react'
 import ShowEntry from './ShowEntry'
 
-
+// Comment here to test deployment
 
 // const seedEntries = [
 //   { category: 'Food', content: 'I love Ramen'},
